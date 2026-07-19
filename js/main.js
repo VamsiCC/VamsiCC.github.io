@@ -116,6 +116,14 @@ const projectData = {
       </div>
       <p>Only position is measured (3-DOF GPS), so <span class="var">H</span> = [<span class="var">I</span><sub>3×3</sub> | 0]. The Joseph form ensures numerical stability of the covariance update.</p>
 
+      <h4>Trajectory Plot</h4>
+      <div class="image-embed" id="ekf-image-container">
+        <div class="image-placeholder">
+          <span>📈</span>
+          <p>Add your matplotlib trajectory plot in index.html<br>(data-image-src attribute on the EKF card)</p>
+        </div>
+      </div>
+
       <h4>Demo Video</h4>
       <div class="video-embed" id="ekf-video-container">
         <div class="video-placeholder">
@@ -162,6 +170,14 @@ const projectData = {
         <li><strong>Progress & speed</strong> — maximizes forward progress along the track contour</li>
         <li><strong>Anti-cheat penalties</strong> — reverse passage, hover, and misalignment penalties prevent reward hacking</li>
       </ul>
+
+      <h4>Full Track Run</h4>
+      <div class="video-embed" id="drone-video-container">
+        <div class="video-placeholder">
+          <span>▶</span>
+          <p>Add your full lap video in index.html<br>(data-video-id attribute on the drone card)</p>
+        </div>
+      </div>
 
       <h4>Track Progression</h4>
       <p>Developed and validated across four track configurations: singular gate test, circular gate test, figure-8 layout, and the full 13-gate race track with stacked gates and altitude changes.</p>
@@ -222,11 +238,26 @@ function openModal(projectId) {
   modalOverlay.classList.add("open");
   document.body.style.overflow = "hidden";
 
+  const card = document.querySelector(`[data-project="${projectId}"]`);
+  if (!card) return;
+
+  const videoId = card.dataset.videoId;
+  const videoContainerId = projectId === "ekf" ? "ekf-video-container" : projectId === "drone" ? "drone-video-container" : null;
+
+  if (videoId && videoContainerId) {
+    const container = document.getElementById(videoContainerId);
+    if (container) {
+      container.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}" allowfullscreen loading="lazy" title="Project demo video"></iframe>`;
+    }
+  }
+
   if (projectId === "ekf") {
-    const videoId = document.querySelector('[data-project="ekf"]')?.dataset.videoId;
-    if (videoId) {
-      const container = document.getElementById("ekf-video-container");
-      container.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}" allowfullscreen loading="lazy"></iframe>`;
+    const imageSrc = card.dataset.imageSrc;
+    if (imageSrc) {
+      const imageContainer = document.getElementById("ekf-image-container");
+      if (imageContainer) {
+        imageContainer.innerHTML = `<img src="${imageSrc}" alt="EKF trajectory plot comparing GPS, ground truth, and fused estimate" loading="lazy" />`;
+      }
     }
   }
 }

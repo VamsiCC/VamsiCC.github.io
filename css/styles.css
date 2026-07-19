@@ -716,6 +716,34 @@ body {
 }
 .video-placeholder span { font-size: 2rem; opacity: 0.4; }
 
+/* Image embed */
+.image-embed {
+  width: 100%;
+  margin: 1.25rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+}
+.image-embed img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.image-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 3rem 1.5rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-align: center;
+}
+.image-placeholder span { font-size: 2rem; opacity: 0.4; }
+
 /* Stats row */
 .stats-row {
   display: flex;
