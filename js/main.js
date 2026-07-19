@@ -163,6 +163,14 @@ const projectData = {
         <li><strong>Anti-cheat penalties</strong> — reverse passage, hover, and misalignment penalties prevent reward hacking</li>
       </ul>
 
+      <h4>Full Track Run</h4>
+      <div class="video-embed" id="drone-video-container">
+        <div class="video-placeholder">
+          <span>▶</span>
+          <p>Add your full lap video in index.html<br>(data-video-id attribute on the drone card)</p>
+        </div>
+      </div>
+
       <h4>Track Progression</h4>
       <p>Developed and validated across four track configurations: singular gate test, circular gate test, figure-8 layout, and the full 13-gate race track with stacked gates and altitude changes.</p>
 
@@ -222,11 +230,14 @@ function openModal(projectId) {
   modalOverlay.classList.add("open");
   document.body.style.overflow = "hidden";
 
-  if (projectId === "ekf") {
-    const videoId = document.querySelector('[data-project="ekf"]')?.dataset.videoId;
-    if (videoId) {
-      const container = document.getElementById("ekf-video-container");
-      container.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}" allowfullscreen loading="lazy"></iframe>`;
+  const card = document.querySelector(`[data-project="${projectId}"]`);
+  const videoId = card?.dataset.videoId;
+  const containerId = projectId === "ekf" ? "ekf-video-container" : projectId === "drone" ? "drone-video-container" : null;
+
+  if (videoId && containerId) {
+    const container = document.getElementById(containerId);
+    if (container) {
+      container.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}" allowfullscreen loading="lazy" title="Project demo video"></iframe>`;
     }
   }
 }
