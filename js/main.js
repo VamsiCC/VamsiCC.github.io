@@ -128,7 +128,7 @@ const projectData = {
       <div class="video-embed" id="ekf-video-container">
         <div class="video-placeholder">
           <span>▶</span>
-          <p>Add your demo video URL in index.html<br>(data-video-id attribute on the EKF card)</p>
+          <p>Add your demo video in index.html<br>(data-video-id — ID or YouTube URL)</p>
         </div>
       </div>
 
@@ -175,7 +175,7 @@ const projectData = {
       <div class="video-embed" id="drone-video-container">
         <div class="video-placeholder">
           <span>▶</span>
-          <p>Add your full lap video in index.html<br>(data-video-id attribute on the drone card)</p>
+          <p>Add your full lap video in index.html<br>(data-video-id — ID or YouTube URL)</p>
         </div>
       </div>
 
@@ -229,6 +229,26 @@ const projectData = {
   },
 };
 
+/** Accepts a bare ID or any common YouTube URL and returns the 11-char video ID. */
+function extractYouTubeId(input) {
+  if (!input) return "";
+  const trimmed = input.trim();
+  if (/^[\w-]{11}$/.test(trimmed)) return trimmed;
+
+  try {
+    const url = new URL(trimmed.startsWith("http") ? trimmed : `https://${trimmed}`);
+    if (url.hostname === "youtu.be") return url.pathname.slice(1).split("/")[0];
+    if (url.hostname.includes("youtube.com")) {
+      if (url.pathname.startsWith("/embed/")) return url.pathname.split("/")[2];
+      if (url.pathname.startsWith("/shorts/")) return url.pathname.split("/")[2];
+      return url.searchParams.get("v") || "";
+    }
+  } catch {
+    return "";
+  }
+  return "";
+}
+
 function openModal(projectId) {
   const data = projectData[projectId];
   if (!data) return;
@@ -241,13 +261,13 @@ function openModal(projectId) {
   const card = document.querySelector(`[data-project="${projectId}"]`);
   if (!card) return;
 
-  const videoId = card.dataset.videoId;
+  const videoId = extractYouTubeId(card.dataset.videoId);
   const videoContainerId = projectId === "ekf" ? "ekf-video-container" : projectId === "drone" ? "drone-video-container" : null;
 
   if (videoId && videoContainerId) {
     const container = document.getElementById(videoContainerId);
     if (container) {
-      container.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}" allowfullscreen loading="lazy" title="Project demo video"></iframe>`;
+      container.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" title="Project demo video"></iframe>`;
     }
   }
 
