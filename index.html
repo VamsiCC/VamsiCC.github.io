@@ -1,1 +1,310 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Vamsi Chilamkur — Machine Learning & Robotics Engineer. Portfolio showcasing projects in computer vision, controls, and sensor fusion." />
+  <title>Vamsi Chilamkur</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Fira+Sans:wght@300;400;500;600&family=Source+Code+Pro:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- Ambient background -->
+  <div class="bg-canvas" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <!-- Mobile header -->
+  <header class="mobile-header">
+    <span class="mobile-logo">VC</span>
+    <button class="menu-btn" id="menu-btn" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+  <nav class="mobile-menu" id="mobile-menu">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Side navigation -->
+  <nav class="side-nav" aria-label="Section navigation">
+    <a href="#landing" class="nav-dot active" data-section="landing"><span class="nav-label">Home</span></a>
+    <a href="#about" class="nav-dot" data-section="about"><span class="nav-label">About</span></a>
+    <a href="#skills" class="nav-dot" data-section="skills"><span class="nav-label">Skills</span></a>
+    <a href="#experience" class="nav-dot" data-section="experience"><span class="nav-label">Experience</span></a>
+    <a href="#projects" class="nav-dot" data-section="projects"><span class="nav-label">Projects</span></a>
+    <a href="#contact" class="nav-dot" data-section="contact"><span class="nav-label">Contact</span></a>
+  </nav>
+
+  <!-- ── Landing ── -->
+  <section id="landing" class="section">
+    <div class="landing-content">
+      <p class="landing-greeting">Hello, I'm</p>
+      <h1 class="landing-name">Vamsi <span>Chilamkur</span></h1>
+      <p class="landing-role" id="typing-role"></p>
+      <p class="landing-desc">
+        EECS @ UC Berkeley · Building intelligent systems at the intersection of machine learning, robotics, and controls.
+      </p>
+      <div class="landing-actions">
+        <a href="#contact" class="btn btn-primary">Contact Me</a>
+        <a href="#about" class="btn btn-outline">Learn More ↓</a>
+      </div>
+    </div>
+    <div class="scroll-hint">scroll to explore</div>
+  </section>
+
+  <!-- ── About ── -->
+  <section id="about" class="section">
+    <div class="section-inner">
+      <p class="section-tag">// 01 — About</p>
+      <h2 class="section-title">About Me</h2>
+      <div class="about-grid">
+        <div class="about-highlight">
+          I'm a machine learning and Robotics enthusiast with extensive experience in computer vision and controls applications. I thrive at the intersection of theory and practical systems — building intelligent pipelines, physical AI models, and scalable infrastructure with real-world impact.
+        </div>
+        <div class="about-details">
+          <p>
+            Currently pursuing a B.S. in Electrical Engineering and Computer Science at UC Berkeley (GPA 3.7, expected May 2027), with coursework spanning AI, machine learning, robotics, computer vision, and NLP.
+          </p>
+          <p>
+            My research spans active vision for bimanual robotic manipulation at BAIR's Hybrid Systems Laboratory and prior work in medical imaging robotics at UC Davis. I hold an active Secret security clearance and am an Eagle Scout.
+          </p>
+          <div class="about-meta">
+            <span class="meta-chip">Berkeley, CA</span>
+            <span class="meta-chip">EECS '27</span>
+            <span class="meta-chip">GPA 3.7</span>
+            <span class="meta-chip">Secret Clearance</span>
+            <span class="meta-chip">Eagle Scout</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Skills ── -->
+  <section id="skills" class="section">
+    <div class="section-inner">
+      <p class="section-tag">// 02 — Skills</p>
+      <h2 class="section-title">Skills</h2>
+      <p class="skills-intro">
+        A toolkit built across research labs, industry internships, and hands-on robotics projects — from training neural policies to deploying on embedded hardware.
+      </p>
+
+      <p class="skills-category">Languages & Frameworks</p>
+      <div class="skills-grid">
+        <div class="skill-card"><div class="skill-icon">🐍</div><div class="skill-name">Python</div></div>
+        <div class="skill-card"><div class="skill-icon">⚡</div><div class="skill-name">PyTorch</div></div>
+        <div class="skill-card"><div class="skill-icon">☕</div><div class="skill-name">Java</div></div>
+        <div class="skill-card"><div class="skill-icon">⚙️</div><div class="skill-name">C++</div></div>
+        <div class="skill-card"><div class="skill-icon">📊</div><div class="skill-name">Pandas</div></div>
+        <div class="skill-card"><div class="skill-icon">🔬</div><div class="skill-name">Scikit-learn</div></div>
+      </div>
+
+      <p class="skills-category">Domains & Tools</p>
+      <div class="skills-grid">
+        <div class="skill-card"><div class="skill-icon">🧠</div><div class="skill-name">Machine Learning</div></div>
+        <div class="skill-card"><div class="skill-icon">👁️</div><div class="skill-name">Computer Vision</div></div>
+        <div class="skill-card"><div class="skill-icon">🎛️</div><div class="skill-name">Controls</div></div>
+        <div class="skill-card"><div class="skill-icon">🤖</div><div class="skill-name">ROS</div></div>
+        <div class="skill-card"><div class="skill-icon">💬</div><div class="skill-name">NLP</div></div>
+        <div class="skill-card"><div class="skill-icon">📐</div><div class="skill-name">CAD</div></div>
+        <div class="skill-card"><div class="skill-icon">📡</div><div class="skill-name">Kafka</div></div>
+        <div class="skill-card"><div class="skill-icon">☁️</div><div class="skill-name">Databricks / Azure</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Experience ── -->
+  <section id="experience" class="section">
+    <div class="section-inner">
+      <p class="section-tag">// 03 — Experience</p>
+      <h2 class="section-title">Professional Experience</h2>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="exp-header">
+            <span class="exp-role">Systems Engineering Intern · <span class="exp-company">U.S. Department of Defense</span></span>
+            <span class="exp-date">June 2026 – Present</span>
+          </div>
+          <p class="exp-location">Remote</p>
+          <ul class="exp-bullets">
+            <li>Work on AI and Machine Learning in military defense and aviation technology</li>
+            <li>Collaborate with the R&amp;D team to apply ML in Data, Synthetic Aperture Radar, and Controls</li>
+            <li>Develop training and tuning pipelines to enhance warfighter capabilities, drastically improving DoD accuracy metrics (reducing error rates from 88.3% to 6.8%)</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="exp-header">
+            <span class="exp-role">Innovation Engineering Intern · <span class="exp-company">Blue Shield of California</span></span>
+            <span class="exp-date">June 2025 – August 2025</span>
+          </div>
+          <p class="exp-location">San Francisco, CA</p>
+          <ul class="exp-bullets">
+            <li>Designed and implemented AI-optimized technology integrations for prior authorization and member health records using Databricks with Azure architecture and RedHat</li>
+            <li>Operated as a full-stack developer to build a natural language data query tool for the Salesforce employee platform</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="exp-header">
+            <span class="exp-role">Research Intern · <span class="exp-company">Hybrid Systems Laboratory @ BAIR</span></span>
+            <span class="exp-date">Sept 2024 – Present</span>
+          </div>
+          <p class="exp-location">UC Berkeley, CA</p>
+          <ul class="exp-bullets">
+            <li>Conduct research in active vision for bimanual robotic manipulation using visual feedback and imitation learning</li>
+            <li>Develop uncertainty failure detection for imitation learning robot policies and out-of-distribution detection, currently in process of publishing research paper</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="exp-header">
+            <span class="exp-role">Research Intern · <span class="exp-company">LARA — Laboratory for AI, Robotics and Automation</span></span>
+            <span class="exp-date">Aug 2022 – Aug 2024</span>
+          </div>
+          <p class="exp-location">UC Davis, CA</p>
+          <ul class="exp-bullets">
+            <li>Created a practical solution to Optical Coherence Tomography (OCT) by compressing the technology into a VR headset for disadvantaged groups</li>
+            <li>Designed and developed a 3-D animatronic eye model using CAD, C++, and Python with National Instruments' LabVIEW, and presented a research paper on the project</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Projects ── -->
+  <section id="projects" class="section">
+    <div class="section-inner">
+      <p class="section-tag">// 04 — Projects</p>
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-grid">
+
+        <div class="project-card" data-project="ekf" data-video-id="">
+          <p class="project-tag">Sensor Fusion</p>
+          <h3 class="project-title">EKF Sensor Fusion</h3>
+          <p class="project-desc">
+            15-state Extended Kalman Filter fusing IMU and GPS for smooth trajectory estimation. C++ with Eigen, validated on KITTI data with interactive globe visualization.
+          </p>
+          <div class="project-tech">
+            <span class="tech-pill">C++</span>
+            <span class="tech-pill">Eigen</span>
+            <span class="tech-pill">Kalman Filter</span>
+            <span class="tech-pill">KITTI</span>
+          </div>
+          <span class="project-link">View details &amp; math →</span>
+        </div>
+
+        <div class="project-card" data-project="drone">
+          <p class="project-tag">Reinforcement Learning</p>
+          <h3 class="project-title">Autonomous Drone Racing</h3>
+          <p class="project-desc">
+            PPO-trained agent racing through multi-gate tracks in NVIDIA Isaac Sim. MPCC-inspired reward shaping, 13.10s best lap, 500 parallel environments.
+          </p>
+          <div class="project-tech">
+            <span class="tech-pill">PPO</span>
+            <span class="tech-pill">Isaac Sim</span>
+            <span class="tech-pill">MPCC</span>
+            <span class="tech-pill">Controls</span>
+          </div>
+          <span class="project-link">View details →</span>
+        </div>
+
+        <div class="project-card" data-project="trash">
+          <p class="project-tag">Computer Vision · Hackathon</p>
+          <h3 class="project-title">TrashTalker</h3>
+          <p class="project-desc">
+            Sodahacks 2025 Sustainability Track Winner. AI-powered waste classification using ESP32-CAM and vision models for real-time sorting.
+          </p>
+          <div class="project-tech">
+            <span class="tech-pill">ESP32</span>
+            <span class="tech-pill">Computer Vision</span>
+            <span class="tech-pill">AWS S3</span>
+            <span class="tech-pill">C</span>
+          </div>
+          <span class="project-link">View details →</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Contact ── -->
+  <section id="contact" class="section">
+    <div class="section-inner">
+      <p class="section-tag">// 05 — Contact</p>
+      <h2 class="section-title">Get In Touch</h2>
+      <div class="contact-grid">
+        <div>
+          <p class="contact-intro">
+            Open to research collaborations, internships, and interesting projects in ML, robotics, and computer vision. Feel free to reach out.
+          </p>
+          <div class="contact-links">
+            <a href="mailto:vamsichilamkur@gmail.com" class="contact-item">
+              <div class="contact-icon">✉️</div>
+              <div>
+                <div class="contact-label">Email</div>
+                <div class="contact-value">vamsichilamkur@gmail.com</div>
+              </div>
+            </a>
+            <a href="tel:+15304009628" class="contact-item">
+              <div class="contact-icon">📞</div>
+              <div>
+                <div class="contact-label">Phone</div>
+                <div class="contact-value">(530) 400-9628</div>
+              </div>
+            </a>
+            <a href="https://linkedin.com/in/vamsi-chilamkur" target="_blank" rel="noopener" class="contact-item">
+              <div class="contact-icon">🔗</div>
+              <div>
+                <div class="contact-label">LinkedIn</div>
+                <div class="contact-value">linkedin.com/in/vamsi-chilamkur</div>
+              </div>
+            </a>
+            <div class="contact-item">
+              <div class="contact-icon">📍</div>
+              <div>
+                <div class="contact-label">Location</div>
+                <div class="contact-value">Berkeley, CA</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <h3>Let's build something.</h3>
+          <p>Whether it's autonomous systems, sensor fusion, or applied ML — I'm always excited to work on problems with real-world impact.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2026 Vamsi Chilamkur · Built with care</p>
+  </footer>
+
+  <!-- ── Project Modal ── -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal" role="dialog" aria-modal="true">
+      <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+      <div class="modal-header">
+        <p class="modal-tag" id="modal-tag"></p>
+        <h3 class="modal-title" id="modal-title"></h3>
+      </div>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
