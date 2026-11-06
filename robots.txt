@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vamsicc.github.io/sitemap.xml
